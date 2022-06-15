@@ -11,31 +11,32 @@ public class PlayManager : MonoBehaviour
     // UI
     TextMeshProUGUI currentHPText;
     TextMeshProUGUI coinCountText;
-    TextMeshProUGUI appleCountText; // slider임
+    TextMeshProUGUI appleCountText;
 
+    int maxHP = 3;
     int currentHP;
     int coin; // 이번 스테이지에서 획득한 코인
-    int star; // 이번 스테이지에서 획득한 코인
+    int apple; // 이번 스테이지에서 획득한 사과
 
     void Start()
     {
         // UI 초기화
         currentHPText = GameObject.Find("CurrentHP").GetComponent<TextMeshProUGUI>();
         coinCountText = GameObject.Find("CoinCount").GetComponent<TextMeshProUGUI>();
-        appleCountText = GameObject.Find("StarCount").GetComponent<TextMeshProUGUI>();
+        appleCountText = GameObject.Find("AppleCount").GetComponent<TextMeshProUGUI>();
         
         // 필드 초기화
-        currentHP = PlayerStat.maxHP;
+        currentHP = maxHP;
         coin = 0;
-        star = 0;
+        apple = 0;
     }
 
     void Update()
     {
         // UI 바꿔주는 코드 -> Update 말고 바뀌었을때 한번씩 호출해주는게 더 효율적일 듯.
         // 나중에 코드 추가되면 수정
-       currentHPText.text = "현재 HP는 " + currentHP + " 입니다.";
-       coinCountText.text = "현재 코인은 " + coin + " 입니다.";
-       appleCountText.text = "현재 별은 " + star + " 입니다.";
+       currentHPText.text = "HP : " + currentHP;
+       coinCountText.text = "Coin : " + coin ;
+       appleCountText.text = "사과 : " + apple ;
     }
 }

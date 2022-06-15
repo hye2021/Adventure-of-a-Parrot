@@ -15,11 +15,12 @@ TagManager:
   - RedPotion
   - GreenPotion
   - VioletPotion
+  - Bomb
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Obstacles
   - Water
   - UI
   - 

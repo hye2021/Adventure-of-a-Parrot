@@ -5,12 +5,11 @@ using UnityEngine.EventSystems;
 
 public class ButtonEvent : MonoBehaviour
 {
-    GameObject Player; // 플레이어 오브젝트 할당
+    public GameObject Player; // 플레이어 오브젝트 할당
     PlayerController playerController;
 
     void Start() {
         // 초기화
-        Player = GameObject.Find("Player");
         playerController = Player.GetComponent<PlayerController>();
     }
 
@@ -31,10 +30,7 @@ public class ButtonEvent : MonoBehaviour
     }
 
     // 대시버튼 -> speed가 있어야겠는데
-    public void SHOT_pointerDown() {
+    public void SHOT_Down() {
         playerController.shot = true;
-    }
-    public void SHOT_pointerUp() {
-        playerController.shot = false;
     }
 }
