@@ -20,8 +20,10 @@ public class Bomb : MonoBehaviour
     }
 
     private void OnTriggerEnter2D (Collider2D other) 
-    {
-             Debug.Log("? 왜 안됨?");
+    {           
+        // 통이랑 부딪히면
+        if (other.tag == "Barrel")
+        {
             // 폭파 효과
             GameObject explosion = Instantiate(ExplosionPrefabs); // 생성
             explosion.transform.position = transform.position; // 위치 지정
@@ -29,10 +31,7 @@ public class Bomb : MonoBehaviour
             // 둘 다 삭제
             Destroy(other.gameObject);
             Destroy(this.gameObject);
-        // 통이랑 부딪히면
-        if (other.tag == "Barrel")
-        {
-
+            Destroy(explosion, 1);
         }
     }
 }

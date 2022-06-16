@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6673020615531341591}
   - component: {fileID: 5175147241063202581}
   - component: {fileID: 173051816233649152}
-  - component: {fileID: 1447069610040997962}
   - component: {fileID: 4706783951380205674}
   m_Layer: 0
   m_Name: Coin
@@ -108,23 +107,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1447069610040997962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155449399329880232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ff3da2a66baceb4fa2ae423a4790266, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  upMove: 0
-  downMove: 0
-  shot: 0
-  bombPrefabs: {fileID: 0}
-  firePosition: {fileID: 0}
 --- !u!61 &4706783951380205674
 BoxCollider2D:
   m_ObjectHideFlags: 0

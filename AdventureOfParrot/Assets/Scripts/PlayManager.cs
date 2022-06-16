@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-// 게임 스테이지를 플레이할 때 사용되는 스크립트
+// 게임 UI 관리
+// Player Stat 관리
 
 public class PlayManager : MonoBehaviour
 {
@@ -13,10 +14,10 @@ public class PlayManager : MonoBehaviour
     TextMeshProUGUI coinCountText;
     TextMeshProUGUI appleCountText;
 
-    int maxHP = 3;
-    int currentHP;
-    int coin; // 이번 스테이지에서 획득한 코인
-    int apple; // 이번 스테이지에서 획득한 사과
+    public int maxHP = 3;
+    public int currentHP;
+    public int coin; // 이번 스테이지에서 획득한 코인
+    public int apple; // 이번 스테이지에서 획득한 사과
 
     void Start()
     {
@@ -33,10 +34,12 @@ public class PlayManager : MonoBehaviour
 
     void Update()
     {
-        // UI 바꿔주는 코드 -> Update 말고 바뀌었을때 한번씩 호출해주는게 더 효율적일 듯.
-        // 나중에 코드 추가되면 수정
        currentHPText.text = "HP : " + currentHP;
        coinCountText.text = "Coin : " + coin ;
        appleCountText.text = "사과 : " + apple ;
+
+        // 사과 코드
+        // 게임 오버 코드
+
     }
 }
