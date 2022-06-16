@@ -47,7 +47,10 @@ public class PlayerController : MonoBehaviour
         // Down 버튼을 누른 상태
         if (downMove)
         {
-            transform.Translate(-moveY * Time.deltaTime); // 이동
+            if (transform.position.y > -3.9)
+            {
+                transform.Translate(-moveY * Time.deltaTime); // 이동
+            }
         }
 
         // 폭탄 발사
