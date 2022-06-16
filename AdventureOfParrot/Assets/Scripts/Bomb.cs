@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
+    AudioSource audioSource;
+    
     public float speed = 3; // 속도
     Vector3 dir = Vector3.right; // 방향
 
     // 폭파 효과
     public GameObject ExplosionPrefabs; // 폭파 효과
 
+    private void Start() 
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -27,10 +33,11 @@ public class Bomb : MonoBehaviour
             // 폭파 효과
             GameObject explosion = Instantiate(ExplosionPrefabs); // 생성
             explosion.transform.position = transform.position; // 위치 지정
+            audioSource.Play(); // 효과음
 
             // 둘 다 삭제
             Destroy(other.gameObject);
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 0.1f);
             Destroy(explosion, 1);
         }
     }

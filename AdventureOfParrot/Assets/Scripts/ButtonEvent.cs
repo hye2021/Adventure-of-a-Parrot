@@ -38,11 +38,17 @@ public class ButtonEvent : MonoBehaviour
 
     // 대시버튼 -> speed가 있어야겠는데
     public void SHOT_Down() {
+        // 각성 상태
+        if (playerController.awakening)
+        {
+            // 바로 사용할 수 있음
+            shotTime = 1;
+        }
+        // 0.5초의 간격을 두고 사용 가능
         if (shotTime > 0.5) 
         {
             playerController.shot = true;
             shotTime =0; // 시간 초기화
         }
-
     }
 }

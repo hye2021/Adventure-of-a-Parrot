@@ -16,6 +16,7 @@ TagManager:
   - GreenPotion
   - VioletPotion
   - Bomb
+  - Friend
   layers:
   - Default
   - TransparentFX
